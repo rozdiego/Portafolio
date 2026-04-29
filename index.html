@@ -3,565 +3,712 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, minimum-scale=0.25,maximum-scale=1.6,initial-scale=1.0,user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-    <title>Portafolio Diego Rozo - Diseñador Ui / Ux - 2024</title>
+    <!-- ===== SEO PRIMARIO ===== -->
+    <title>Diego Rozo | UX/UI Designer en Medellín, Colombia — +8 años de experiencia</title>
+    <meta name="description" content="Soy Diego Rozo, UX/UI Designer con más de 7 años de experiencia en Medellín, Colombia. Actualmente en UltraGroup. He diseñado para Telefónica, EMI y BUPA. Contáctame y transformemos tu producto digital." />
+    <meta name="keywords" content="UX designer Medellín, UI designer Colombia, diseñador UX Colombia, consultor UX Medellín, diseño de experiencia de usuario, diseño de interfaces, Diego Rozo, UX/UI designer freelance Colombia" />
+    <meta name="author" content="Diego Rozo" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://www.rozdiego.com/" />
 
-    <meta name="description"
-        content="Hola!, diseñador gráfico - user experience, bienvenidos a mi portafolio web, aquí van a encontrar todo mi proceso de ux que he aplicado en mis proyectos profesionales" />
-    <meta name="keywords" content="diseño de interfaces, ui, ux - ui, diseño gráfico" />
+    <!-- ===== OPEN GRAPH (LinkedIn, Facebook, WhatsApp) ===== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:url" content="https://www.rozdiego.com/" />
+    <meta property="og:site_name" content="Diego Rozo — UX/UI Designer" />
+    <meta property="og:title" content="Diego Rozo | UX/UI Designer en Medellín, Colombia" />
+    <meta property="og:description" content="Consultor UX con +8 años de experiencia diseñando productos digitales para Telefónica, EMI y BUPA. Transformo necesidades de usuarios en interfaces funcionales y atractivas." />
+    <meta property="og:image" content="https://www.rozdiego.com/images/diego.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Diego Rozo, UX/UI Designer en Medellín Colombia" />
 
-    <link rel="icon" href="favicon.png" sizes="192x192" />
-    <link rel="stylesheet" href="css/bootstrap-grid.css" />
+    <!-- ===== TWITTER / X CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Diego Rozo | UX/UI Designer en Medellín, Colombia" />
+    <meta name="twitter:description" content="Consultor UX con +8 años de experiencia diseñando productos digitales para Telefónica, EMI y BUPA." />
+    <meta name="twitter:image" content="https://www.rozdiego.com/images/diego.jpg" />
 
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+
+    <!-- ===== FUENTES ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/animate.css" />
+    <!-- ===== TAILWIND ===== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: { accent: '#fdd55c' },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
     <link rel="stylesheet" href="css/estilos.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 
+    <!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.rozdiego.com/#website",
+          "url": "https://www.rozdiego.com/",
+          "name": "Diego Rozo — UX/UI Designer en Medellín",
+          "description": "Portafolio profesional de Diego Rozo, UX/UI Designer con más de 8 años de experiencia en Medellín, Colombia.",
+          "inLanguage": "es-CO",
+          "publisher": { "@id": "https://www.rozdiego.com/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.rozdiego.com/#person",
+          "name": "Diego Rozo",
+          "alternateName": "Diego Andrés Rozo Molina",
+          "url": "https://www.rozdiego.com/",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.rozdiego.com/images/diego.jpg",
+            "caption": "Diego Rozo, UX/UI Designer en Medellín, Colombia"
+          },
+          "jobTitle": "UX/UI Designer",
+          "description": "Consultor UX con más de 8 años de experiencia en diseño de interfaces y experiencia de usuario. Especializado en investigación de usuario, prototipos de alta fidelidad y sistemas de diseño para empresas de tecnología, salud y logística en Colombia.",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "UltraGroup"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Medellín",
+            "addressRegion": "Antioquia",
+            "addressCountry": "CO"
+          },
+          "email": "mailto:rozdiego@gmail.com",
+          "telephone": "+573002135654",
+          "sameAs": [
+            "https://www.linkedin.com/in/rozdiego/",
+            "https://www.behance.net/rozdiego"
+          ],
+          "knowsAbout": [
+            "UX Design", "UI Design", "Design Thinking", "User Research",
+            "Figma", "Adobe XD", "Prototyping", "Design Systems", "Usability Testing",
+            "Information Architecture", "Wireframing", "Interaction Design"
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
-<body id="page-top" class="text-gray-900">
+<body id="page-top">
 
-    <nav class="fixed left-5 md:left-0 z-40">
-        <div class="flex flex-col items-center mx-auto p-2">
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-
-                <ul class="font-medium text-center bg-yellow-300 shadow dark:bg-gray-900">
-                    <li class="my-2">
-                        <a href="#home" data-scroll="home"
-                            class="active p-3 block text-white md:bg-transparent dark:bg-gray-700" aria-current="page">
-                            <svg class="w-7 h-7 text-gray-900 dark:text-yellow-300" fill="none" stroke="currentColor"
-                                stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
-                                </path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="my-2">
-                        <a href="#portfolio" data-scroll="portfolio"
-                            class="p-3 block text-white bg-blue-700 md:bg-transparent md:text-blue-700"
-                            aria-current="page">
-                            <svg class="w-7 h-7 text-gray-900" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42">
-                                </path>
-
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="my-2">
-                        <a href="#experiencia" data-scroll="experiencia"
-                            class="p-3 block text-white bg-blue-700 md:bg-transparent md:text-blue-700"
-                            aria-current="page">
-                            <svg class="w-7 h-7 text-gray-900" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="my-2">
-                        <a href="#contacto" data-scroll="contacto"
-                            class="p-3 block text-white bg-blue-700 md:bg-transparent md:text-blue-700"
-                            aria-current="page">
-                            <svg class="w-7 h-7 text-gray-900" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z">
-                                </path>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
+    <nav class="nav-sidebar" aria-label="Navegación principal">
+        <ul>
+            <li>
+                <a href="#home" data-scroll="home" class="nav-link active" aria-label="Inicio">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                    </svg>
+                    <span class="nav-label">Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#portfolio" data-scroll="portfolio" class="nav-link" aria-label="Portafolio">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+                    </svg>
+                    <span class="nav-label">Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#experiencia" data-scroll="experiencia" class="nav-link" aria-label="Experiencia">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span class="nav-label">Experiencia</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contacto" data-scroll="contacto" class="nav-link" aria-label="Contacto">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
+                    </svg>
+                    <span class="nav-label">Contacto</span>
+                </a>
+            </li>
+        </ul>
     </nav>
-    <main class="container-full">
-        <section id="home" class="section relative dr-header bg-gray-900 pt-2">
-            <article class="container">
-                <div class="row align-items-center">
-                    <!--<div class="col-md-4">
-                            <figure class="">
-                                <img class="h-auto max-w-full shadow-lg relative"
-                                    style="border: 10px solid white; top: 4rem" src="images/diego.jpg" alt="" />
-                            </figure>
-                        </div>-->
-                    <div class="col-md">
-                        <div class="dr-header-name mt-5">
-                            <h1 class="text-5xl font-bold text-yellow-300 uppercase">
-                                Diego A. Rozo M.
-                            </h1>
-                            <h3 class="text-2xl font-light text-gray-300">
-                                UX | UI Designer & Graphic Design
-                            </h3>
-                        </div>
-                        <div class="dr-header-info mt-4">
-                            <h6 class="text-lg font-light text-gray-300">
-                                Consultor UX / Investigador para el Diseño de Experiencia
-                            </h6>
-                            <h6 class="text-lg font-light text-gray-300">
-                                Medellín - Colombia
-                            </h6>
-                        </div>
-                        <div class="dr-header-education my-4">
-                            <h6 class="text-lg font-bold text-gray-300">
-                                Experiencia:
-                                <span class="font-light">UX | UI Designer</span>
-                            </h6>
-                            <h6 class="text-lg font-bold text-gray-300">
-                                Educación:
-                                <span class="font-light">Prototipo Avanzado en Figma</span>
-                            </h6>
-                        </div>
+
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section id="home" class="section section-hero bg-gray-900">
+            <div class="hero-dot-grid" aria-hidden="true"></div>
+            <div class="hero-bg-glow" aria-hidden="true"></div>
+            <div class="container relative z-10">
+                <p class="section-eyebrow fade-in">UX / UI Designer &amp; Diseñador Gráfico</p>
+                <h1 class="hero-title fade-in anim-delay-1">
+                    Diego A.<br /><span class="text-accent">Rozo M.</span>
+                </h1>
+                <p class="hero-subtitle fade-in anim-delay-2">
+                    Consultor UX · Diseño de interfaces &amp; experiencia de usuario<br />
+                    <span class="hero-location">Medellín, Colombia</span>
+                </p>
+                <div class="hero-actions fade-in anim-delay-3">
+                    <a href="#portfolio" class="btn-primary">Ver proyectos</a>
+                    <a href="CVDiegoRozo.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline">Descargar CV</a>
+                </div>
+                <div class="hero-socials fade-in anim-delay-3">
+                    <a href="https://www.linkedin.com/in/rozdiego/" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="LinkedIn de Diego Rozo">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://www.behance.net/rozdiego" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="Behance de Diego Rozo">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.543c-.033-1.469-.774-2.306-1.666-2.306-.742 0-1.729.615-1.877 2.306zM9.276 11.443c1.745.35 2.274 1.756 2.274 2.796 0 2.386-1.681 3.761-4.257 3.761H2V5h5.405c2.484 0 4.095 1.005 4.095 3.105 0 1.421-.548 2.107-2.224 3.338zM5.57 7.812v2.617h1.721c1.049 0 1.57-.538 1.57-1.308 0-.772-.52-1.309-1.57-1.309H5.57zm0 4.917v2.871h2.047c1.087 0 1.642-.523 1.642-1.434 0-.912-.555-1.437-1.642-1.437H5.57z" />
+                        </svg>
+                        Behance
+                    </a>
+                </div>
+
+                <div class="hero-stats fade-in anim-delay-4">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">+7</span>
+                        <span class="hero-stat-label">Años de experiencia</span>
+                    </div>
+                    <div class="hero-stat-divider" aria-hidden="true"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">+15</span>
+                        <span class="hero-stat-label">Proyectos entregados</span>
+                    </div>
+                    <div class="hero-stat-divider" aria-hidden="true"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">4</span>
+                        <span class="hero-stat-label">Empresas top Colombia</span>
                     </div>
                 </div>
-            </article>
+            </div>
+            <div class="hero-scroll-line" aria-hidden="true"><span></span></div>
         </section>
 
-        <section class="section dr-aboutme pb-5">
-            <article class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-8 offset-md-4">
-                        <ul class="mb-4 border-b border-gray-400">
-                            <li>
-                                <a href="https://www.linkedin.com/in/rozdiego/" class="inline-flex items-center font-medium hover:underline">
-                   
-                                    <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                        class="w-7 h-7 mr-2 text-yellow-300">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                                    </svg>
-
-                                    Mi Linkedin
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.behance.net/rozdiego" target="_blank"
-                                    class="inline-flex items-center font-medium hover:underline">
-                                    <svg class="w-7 h-7 mr-2 text-yellow-300" fill="none" stroke="currentColor"
-                                        stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                        aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z">
-                                        </path>
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z">
-                                        </path>
-                                    </svg>
-                                    Portafolio Behance
-                                </a>
-                            </li>
-                            <li>
-                                <a href="CVDiegoRozo.pdf" target="_blank"
-                                    class="inline-flex items-center font-medium hover:underline">
-                                    <svg class="w-7 h-7 mr-2 text-yellow-300" fill="none" stroke="currentColor"
-                                        stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                        aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9.75v6.75m0 0l-3-3m3 3l3-3m-8.25 6a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z">
-                                        </path>
-                                    </svg>
-                                    Descargar mi CV
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="grid md:grid-cols-2 md:gap-6 py-5">
-                    <div class="dr-aboutme-info">
-                        <h2 class="text-2xl font-bold uppercase mb-3">Sobre mi</h2>
-                        <p class="font-light">
-
-                            Experto en diseño de interfaces gráficas y experiencia de usuario en la creación de
-                            soluciones digitales atractivas y funcionales. Mi enfoque se centra en la identificación de
-                            las necesidades de los usuarios para crear productos que cumplan sus expectativas y
-                            necesidades. Con habilidades en el desarrollo de prototipos y pruebas de usabilidad, tengo
-                            un historial comprobado en la creación de productos digitales intuitivos y accesibles,
-                            trabajando de manera efectiva con los interesados internos y externos para asegurar la
-                            alineación de los objetivos y la entrega de soluciones de alta calidad.
-
-                        </p>
-                    </div>
-                    <div class="dr-aboutme-info">
-                        <figure class="max-w-screen-md mx-auto">
-                            <svg aria-hidden="true" class="w-12 h-12 mb-3 text-gray-400 dark:text-gray-600"
-                                viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                                    fill="currentColor" />
-                            </svg>
-                            <blockquote>
-                                <p class="text-2xl italic font-medium text-gray-900 dark:text-white">
-                                    " Crear seres ficticios (personas) que representan a los
-                                    perfiles más comunes entre quienes usarán un producto o
-                                    servicio..."
-                                </p>
-                            </blockquote>
-                            <p class="font-light">
-                                Crea a los fines de los 90 y principios de 2000, una técnica
-                                de definición de usuarios basada en la creación de arquetipos
-                                llamada "personas"
-                            </p>
-                            <figcaption class="flex items-center justify-start mt-6 space-x-3">
-                                <img class="w-6 h-6 rounded-full"
-                                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
-                                    alt="profile picture" />
-                                <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                    <cite class="pr-3 font-medium text-gray-900 dark:text-white">Alan Cooper</cite>
-                                    <cite class="pl-3 text-sm text-gray-500 dark:text-gray-400">CEO at Google</cite>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <section id="portfolio" class="section dr-portfolio dr-p-8 bg-blue-100">
+        <!-- ===== SOBRE MÍ ===== -->
+        <section class="section py-24">
             <div class="container">
-                <h2 class="text-2xl font-bold uppercase mb-3">Portafolio</h2>
-                <article class="grid md:grid-cols-3 md:gap-6 py-5">
-                    <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-                        <img class="rounded-t-lg" src="images/emi1.jpg" alt="" />
-
-                        <div class="p-3">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Grupo EMI
-                                </h5>
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <span class="section-label">Sobre mí</span>
+                        <h2 class="section-title mt-2 mb-6">
+                            Diseño centrado<br />en las <em class="text-accent-warm not-italic">personas</em>
+                        </h2>
+                        <p class="body-text mb-4">
+                            Profesional en diseño gráfico con más de 7 años de experiencia en investigación de
+                            usuarios, experiencia de cliente y diseño centrado en datos. He liderado procesos de
+                            descubrimiento de producto, análisis de comportamiento y diseño de soluciones digitales,
+                            aplicando metodologías cualitativas y cuantitativas para optimizar la percepción del cliente.
+                        </p>
+                        <p class="body-text mb-8">
+                            Tengo experiencia diseñando e implementando encuestas, entrevistas y mapeos de
+                            experiencia para comprender necesidades, dolores y expectativas, generando insights
+                            accionables para la toma de decisiones. Domino herramientas como Figma, Hotjar, Maze
+                            y Google Analytics, integrando visualización, estrategia y voz del cliente en entornos digitales.
+                        </p>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">Design Thinking</span>
+                            <span class="skill-tag">UX Research</span>
+                            <span class="skill-tag">Hotjar</span>
+                            <span class="skill-tag">Maze</span>
+                            <span class="skill-tag">Google Analytics</span>
+                            <span class="skill-tag">Design Systems</span>
+                            <span class="skill-tag">Storybook</span>
+                            <span class="skill-tag">React JS</span>
+                            <span class="skill-tag">WCAG</span>
+                            <span class="skill-tag">Atomic Design</span>
+                        </div>
+                        <div class="about-links mt-8">
+                            <a href="https://www.linkedin.com/in/rozdiego/" target="_blank" rel="noopener noreferrer" class="about-link">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                                </svg>
+                                LinkedIn
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                En este proyecto, trabajé como experto en UX y UI para Grupo EMI en Colombia y UCM.
-                            </p>
-                            <a href="https://www.behance.net/gallery/209620357/EMI-Ux-Case-Study"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"
-                                type="button" target="_blank">
-                                Ver proyecto
+                            <a href="https://www.behance.net/rozdiego" target="_blank" rel="noopener noreferrer" class="about-link">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.543c-.033-1.469-.774-2.306-1.666-2.306-.742 0-1.729.615-1.877 2.306zM9.276 11.443c1.745.35 2.274 1.756 2.274 2.796 0 2.386-1.681 3.761-4.257 3.761H2V5h5.405c2.484 0 4.095 1.005 4.095 3.105 0 1.421-.548 2.107-2.224 3.338zM5.57 7.812v2.617h1.721c1.049 0 1.57-.538 1.57-1.308 0-.772-.52-1.309-1.57-1.309H5.57zm0 4.917v2.871h2.047c1.087 0 1.642-.523 1.642-1.434 0-.912-.555-1.437-1.642-1.437H5.57z" />
+                                </svg>
+                                Behance
+                            </a>
+                            <a href="CVDiegoRozo.pdf" target="_blank" rel="noopener noreferrer" class="about-link">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v6.75m0 0l-3-3m3 3l3-3m-8.25 6a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                                </svg>
+                                Descargar CV
                             </a>
                         </div>
                     </div>
-                    <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-                        <img class="rounded-t-lg" src="images/bupa1.jpg" alt="" />
-
-                        <div class="p-3">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    BUPA
-                                </h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                Tuve la oportunidad de aplicar las metodologías Design Thinking y Agile en un
-                                proyecto emocionante
+                    <div class="about-right reveal reveal-delay-1">
+                        <blockquote class="about-quote-dark">
+                            <svg class="quote-icon-dark" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor" />
+                            </svg>
+                            <p class="quote-text-dark">
+                                "Crear seres ficticios (personas) que representan a los perfiles más comunes
+                                entre quienes usarán un producto o servicio..."
                             </p>
-
-                            <a href="https://www.behance.net/gallery/209624485/BUPA-UI-Desgin"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"
-                                type="button" target="_blank">
-                                Ver proyecto
-                            </a>
+                            <footer class="quote-footer-dark">
+                                <cite class="quote-author-dark">Alan Cooper</cite>
+                                <span class="quote-role-dark">Pionero del Diseño de Interacción</span>
+                            </footer>
+                        </blockquote>
+                        <div class="about-mini-stats">
+                            <div class="about-mini-stat">
+                                <span class="about-mini-number">+7</span>
+                                <span class="about-mini-label">Años</span>
+                            </div>
+                            <div class="about-mini-stat">
+                                <span class="about-mini-number">+15</span>
+                                <span class="about-mini-label">Proyectos</span>
+                            </div>
+                            <div class="about-mini-stat">
+                                <span class="about-mini-number">4</span>
+                                <span class="about-mini-label">Empresas top</span>
+                            </div>
                         </div>
                     </div>
-                    <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-                        <img class="rounded-t-lg" src="images/quick.jpg" alt="" />
-
-                        <div class="p-3">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Quick
-                                </h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                Trabajé como experto en UX y UI para Quick, donde apliqué la metodología de
-                                Design Thinking
-                            </p>
-
-                            <a href="https://www.behance.net/gallery/209482265/Quick-Ux-Case-Study"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"
-                                type="button" target="_blank">
-                                Ver proyecto
-                            </a>
-                        </div>
-                    </div>
-                </article>
+                </div>
             </div>
         </section>
 
-        <section id="experiencia" class="section dr-experiennce dr-p-8">
-            <article class="container">
-                <h2 class="text-2xl font-bold uppercase mb-3">Experiencia</h2>
-                <div class="dr-timelinecard" style="padding: 20px; margin: 10px 0px">
-                    <ol class="relative border-l border-gray-200 dark:border-gray-700">
-                        <li class="mb-10 ml-6">
-                            <span
-                                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                <svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
-                            <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                                UX/UI Designer - Telefónica
-                                <span
-                                    class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">Actualmente</span>
-                            </h3>
-                            <time
-                                class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Oct.
-                                2021</time>
-                            <p class="text-base font-normal text-gray-500 mb-3">
-                                Como especialista en UX/UI para el segmento de Movistar en Terminales - eCommerce,
-                                realizo entrevistas con usuarios y llevo a cabo investigaciones de usuario para
-                                comprender sus necesidades y expectativas. Co-participo en el descubrimiento de
-                                productos digitales con stakeholders y me enfoco en el diseño y arquitectura de sistemas
-                                de diseño centrados en el usuario. Utilizo prototipado UI/UX de alta y baja fidelidad
-                                para crear soluciones digitales efectivas y atractivas para la web, tablet y móvil.
-                            </p>
-                            <p class="text-base font-bold text-gray-500">
-                                Programas:
-                            <ul class="text-base font-normal text-gray-500 list-disc list-inside">
-                                <li>Figma</li>
-                                <li>Adobe XD</li>
-                                <li>Adobe CC</li>
-                            </ul>
-                            </p>
-
-                        </li>
-                        <li class="mb-10 ml-6">
-                            <span
-                                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                <svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
-                            <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                                UX/UI Designer - Quick
-                            </h3>
-                            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                Oct. 2020 - Oct. 2021
-                            </time>
-                            <p class="text-base font-normal text-gray-500 mb-3">
-                                Fui un especialista en la gestión, consultoría y desarrollo de procesos de experiencia
-                                de usuario (UX), diseño y desarrollo de sistemas de diseño para el sector de transporte
-                                y logística. Me apasionó el desarrollo de soluciones digitales atractivas y funcionales
-                                que mejoraron la experiencia del usuario. Mi enfoque se centró en la creación de
-                                soluciones UX/UI centradas en el usuario que fueron intuitivas y accesibles para
-                                garantizar una experiencia del usuario de alta calidad.
-                            </p>
-                            <p class="text-base font-normal text-gray-500 mb-3">
-                                Realicé entrevistas a los Quickers para comprender sus necesidades específicas y crear
-                                soluciones digitales efectivas y atractivas que satisfagan sus necesidades. Fui un
-                                comunicador habilidoso y un miembro comprometido del equipo, trabajando de manera
-                                efectiva con los interesados internos y externos para asegurar la alineación de los
-                                objetivos.
-                            </p>
-
-                            <p class="text-base font-bold text-gray-500">
-                                Programas:
-                            <ul class="text-base font-normal text-gray-500 list-disc list-inside">
-                                <li>Figma</li>
-                                <li>Adobe XD</li>
-                                <li>Adobe CC</li>
-                            </ul>
-                            </p>
-                        </li>
-                        <li class="ml-6">
-                            <span
-                                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                <svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
-                            <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                                UX/UI Designer - Intergrupo
-                            </h3>
-                            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                Oct. 2017 - May. 2020
-                            </time>
-                            <p class="text-base font-normal text-gray-500 mb-3">
-                                Me especialicé en la gestión, consultoría y desarrollo de procesos UX, así como en el
-                                diseño y desarrollo de sistemas de diseño. Con habilidades en el desarrollo de
-                                wireframes, mockups y prototipado de alta y baja calidad, tuve experiencia en la
-                                creación de arquitectura de información, mapas mentales y user flows para mejorar la
-                                experiencia del usuario. Además, tenía experiencia en la investigación de usuario, lo
-                                que me permitió comprender las necesidades de los usuarios y crear soluciones digitales
-                                efectivas y atractivas que satisfacían sus necesidades. Mi enfoque se centró en la
-                                creación de soluciones UX/UI que fueran intuitivas y accesibles para garantizar una
-                                experiencia del usuario de alta calidad.
-                            </p>
-                            <p class="text-base font-bold text-gray-500">
-                                Logros:
-                            <ul class="text-base font-normal text-gray-500 list-disc list-inside">
-                                <li>Participación en el desarrollo del sitio web de abonados y boletería QR para el
-                                    Atlético Nacional</li>
-                                <li>Participación en el nuevo portal de EMI y UCM</li>
-                                <li>Participación plataforma de BUPA</li>
-                            </ul>
-                            </p>
-                            <p class="text-base font-bold text-gray-500">
-                                Programas:
-                            <ul class="text-base font-normal text-gray-500 list-disc list-inside">
-                                <li>Figma</li>
-                                <li>Adobe XD</li>
-                                <li>Adobe CC</li>
-                                <li>Sketch App</li>
-                            </ul>
-                            </p>
-                        </li>
-                    </ol>
+        <!-- ===== PORTAFOLIO ===== -->
+        <section id="portfolio" class="section py-24 bg-gray-50">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Trabajo</span>
+                    <h2 class="section-title mt-2 mb-2">Proyectos</h2>
+                    <p class="text-gray-500 font-light">Casos de estudio UX seleccionados</p>
                 </div>
-            </article>
+
+                <div class="projects-grid mt-14">
+
+                    <!-- Card destacada: layout horizontal -->
+                    <article class="project-card project-card--featured reveal">
+                        <div class="project-card-image">
+                            <img src="images/emi1.jpg" alt="Caso de estudio UX para Grupo EMI — rediseño de experiencia digital" loading="lazy" width="800" height="450" />
+                            <div class="project-card-overlay" aria-hidden="true">
+                                <a href="https://www.behance.net/gallery/209620357/EMI-Ux-Case-Study" target="_blank" rel="noopener noreferrer" class="project-card-btn" tabindex="-1">
+                                    Ver en Behance
+                                    <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-tag">UX Case Study · Destacado</span>
+                            <h3 class="project-title">Grupo EMI</h3>
+                            <p class="project-desc">Experto en UX y UI para Grupo EMI en Colombia y UCM, aplicando metodologías de investigación de usuario centradas en necesidades reales. Diseño de sistema de componentes y flujos de onboarding.</p>
+                            <a href="https://www.behance.net/gallery/209620357/EMI-Ux-Case-Study" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver proyecto completo
+                                <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Dos cards secundarias -->
+                    <article class="project-card reveal reveal-delay-1">
+                        <div class="project-card-image">
+                            <img src="images/bupa1.jpg" alt="Diseño UI para BUPA — plataforma de salud digital internacional" loading="lazy" width="400" height="250" />
+                            <div class="project-card-overlay" aria-hidden="true">
+                                <a href="https://www.behance.net/gallery/209624485/BUPA-UI-Desgin" target="_blank" rel="noopener noreferrer" class="project-card-btn" tabindex="-1">
+                                    Ver en Behance
+                                    <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-tag">UI Design</span>
+                            <h3 class="project-title">BUPA</h3>
+                            <p class="project-desc">Aplicación de metodologías Design Thinking y Agile en plataforma de salud internacional, logrando una experiencia digital cohesiva.</p>
+                            <a href="https://www.behance.net/gallery/209624485/BUPA-UI-Desgin" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver proyecto
+                                <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal reveal-delay-2">
+                        <div class="project-card-image">
+                            <img src="images/quick.jpg" alt="Caso de estudio UX para Quick — plataforma de transporte y logística" loading="lazy" width="400" height="250" />
+                            <div class="project-card-overlay" aria-hidden="true">
+                                <a href="https://www.behance.net/gallery/209482265/Quick-Ux-Case-Study" target="_blank" rel="noopener noreferrer" class="project-card-btn" tabindex="-1">
+                                    Ver en Behance
+                                    <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-tag">UX Case Study</span>
+                            <h3 class="project-title">Quick</h3>
+                            <p class="project-desc">Experto en UX y UI para Quick, aplicando Design Thinking en la plataforma de transporte y logística para optimizar la experiencia del usuario.</p>
+                            <a href="https://www.behance.net/gallery/209482265/Quick-Ux-Case-Study" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver proyecto
+                                <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <section id="contacto" class="section dr-contactme dr-p-8 bg-yellow-300">
-            <article class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="text-2xl font-bold uppercase mb-3 p-6 pb-1">
-                            Escribame
-                        </h2>
+        <!-- ===== EXPERIENCIA ===== -->
+        <section id="experiencia" class="section py-24">
+            <div class="container">
+                <span class="section-label">Trayectoria</span>
+                <h2 class="section-title mt-2 mb-14">Experiencia</h2>
 
-                        <form class="p-6 pt-1">
-                            <div class="grid md:grid-cols-2 md:gap-6">
-                                <div class="relative z-0 w-full mb-6 group">
-                                    <input type="text" name="floating_first_name" id="floating_first_name"
-                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-900 appearance-none focus:outline-none focus:ring-0 focus:border-blue-800 peer"
-                                        placeholder=" " required />
-                                    <label for="floating_first_name"
-                                        class="peer-focus:font-medium absolute text-sm text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-b8ue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                                        Primer Nombre
-                                    </label>
-                                </div>
-                                <div class="relative z-0 w-full mb-6 group">
-                                    <input type="email" name="floating_email" id="floating_email"
-                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-900 appearance-none focus:outline-none focus:ring-0 focus:border-blue-800 peer"
-                                        placeholder=" " required />
-                                    <label for="floating_email"
-                                        class="peer-focus:font-medium absolute text-sm text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-b8ue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección
-                                        de Correo</label>
+                <div class="timeline">
+
+                    <!-- UltraGroup — actual -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title">
+                                        UX/UI Designer — UltraGroup
+                                        <span class="badge-current">Actual</span>
+                                    </h3>
+                                    <time class="timeline-date" datetime="2025-09">Sept. 2025 — Presente</time>
                                 </div>
                             </div>
-                            <div class="relative z-0 w-full mb-6 group">
-                                <textarea id="message" rows="4"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-900 appearance-none focus:outline-none focus:ring-0 focus:border-blue-800 peer"
-                                    placeholder=" " required></textarea>
-                                <label for="floating_last_name"
-                                    class="peer-focus:font-medium absolute text-sm text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-b8ue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje</label>
+                            <p class="timeline-desc">
+                                Desarrollo y documentación del Design System Nomad para canales web y app.
+                                Maquetación de componentes UI reutilizables en React + Styled Components para
+                                flujos de compra y postventa. Estandarización visual de journeys (Fibra, Terminales,
+                                Pospago, Movistar Total) e implementación de pruebas A/B en entornos colaborativos Git.
+                            </p>
+                            <div class="timeline-achievement-pill">
+                                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                Reducción del 35 % en inconsistencias visuales · +25 % velocidad de despliegue
                             </div>
-                            <button type="submit"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Enviar
-                            </button>
-                        </form>
+                            <ul class="timeline-tools" aria-label="Herramientas">
+                                <li>Figma</li><li>React JS</li><li>Styled Components</li><li>Storybook</li><li>Jest</li><li>Git</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="dr-social align-items-center">
-                            <div class="flex flex-col items-center md:flex-row md:max-w-xl">
-                                <svg class="w-12 h-12 mr-2" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
-                                    </path>
-                                </svg>
-                                <div class="flex flex-col justify-between p-4 leading-normal">
-                                    <p class="font-normal">Correo electrónico</p>
-                                    <h5 class="text-3xl font-bold tracking-tight">
-                                        <a class="hover:underline"
-                                            href="mailto:rozdiego@gmail.com">rozdiego@gmail.com</a>
-                                    </h5>
+
+                    <!-- Telefónica -->
+                    <div class="timeline-item reveal reveal-delay-1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title">UX/UI Designer — Telefónica Movistar</h3>
+                                    <time class="timeline-date" datetime="2021-10/2025-09">Oct. 2021 — Sept. 2025</time>
                                 </div>
                             </div>
+                            <p class="timeline-desc">
+                                Lideré el desarrollo del Design System Nomad y la estandarización visual de journeys
+                                estratégicos (eCommerce, Terminales, Pospago). Implementé pruebas A/B y optimicé
+                                la consistencia visual en múltiples canales: Magento, WebApp y WhatsApp.
+                            </p>
+                            <div class="timeline-achievement-pill">
+                                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                Reducción del 35 % en inconsistencias visuales · +25 % velocidad de despliegue
+                            </div>
+                            <ul class="timeline-tools" aria-label="Herramientas">
+                                <li>Figma</li><li>Adobe XD</li><li>React JS</li><li>Design Tokens</li><li>Magento</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                            <div class="flex flex-col items-center md:flex-row md:max-w-xl">
-                                <svg class="w-12 h-12 mr-2" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3">
-                                    </path>
-                                </svg>
-                                <div class="flex flex-col justify-between p-4 leading-normal">
-                                    <p class="font-normal">Número de contacto</p>
-                                    <h5 class="text-3xl font-bold tracking-tight">
-                                        +57 3002135654
-                                    </h5>
+                    <!-- Quick -->
+                    <div class="timeline-item reveal reveal-delay-1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title">UX/UI Designer — Quick</h3>
+                                    <time class="timeline-date" datetime="2020-10/2021-10">Oct. 2020 — Oct. 2021</time>
                                 </div>
                             </div>
+                            <p class="timeline-desc">
+                                Implementación de paneles de administración y tracking en React JS bajo arquitectura
+                                limpia. Creación de componentes modulares con CSS Modules + BEM, documentados
+                                en Storybook. Colaboración con equipo de backend C# para integración de APIs REST.
+                            </p>
+                            <div class="timeline-achievement-pill">
+                                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                −40 % en tiempo de desarrollo gracias a la estandarización del UI Kit
+                            </div>
+                            <ul class="timeline-tools" aria-label="Herramientas">
+                                <li>Figma</li><li>React JS</li><li>CSS Modules</li><li>BEM</li><li>Storybook</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                            <div class="flex flex-col items-center md:flex-row md:max-w-xl">
-                                <svg class="w-12 h-12 mr-2" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244">
-                                    </path>
-                                </svg>
-                                <div class="flex flex-col justify-between p-4 leading-normal">
-                                    <p class="font-normal">Linkedin</p>
-                                    <h5 class="text-3xl font-bold tracking-tight">
-                                        <a class="hover:underline" href="https://www.linkedin.com/in/rozdiego/"
-                                            target="_blank">@rozdiego</a>
-                                    </h5>
+                    <!-- Intergrupo -->
+                    <div class="timeline-item reveal reveal-delay-1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title">UX/UI Designer — Intergrupo (Software One)</h3>
+                                    <time class="timeline-date" datetime="2017-10/2020-05">Oct. 2017 — May. 2020</time>
+                                </div>
+                            </div>
+                            <p class="timeline-desc">
+                                Desarrollé wireframes, user flows y arquitectura de información para plataformas
+                                empresariales. Validé soluciones con usuarios finales y realicé mejoras continuas
+                                basadas en métricas UX. Participé en la integración de sistemas complejos,
+                                mejorando la navegación y la tasa de retención.
+                            </p>
+                            <div class="timeline-achievements">
+                                <p class="font-semibold text-gray-700 text-sm mb-2">Proyectos destacados:</p>
+                                <ul class="list-disc list-inside text-gray-500 text-sm space-y-1">
+                                    <li>Portal de abonados y boletería QR — Atlético Nacional</li>
+                                    <li>Nuevo portal digital — EMI &amp; UCM</li>
+                                    <li>Plataforma digital — BUPA</li>
+                                </ul>
+                            </div>
+                            <ul class="timeline-tools" aria-label="Herramientas">
+                                <li>Figma</li><li>Adobe XD</li><li>Sketch</li><li>User flows</li><li>Usability Testing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EDUCACIÓN & STACK TÉCNICO ===== -->
+        <section class="section py-24 bg-gray-50">
+            <div class="container">
+                <div class="edu-grid reveal">
+
+                    <div class="edu-col">
+                        <span class="section-label">Formación</span>
+                        <h2 class="section-title mt-2 mb-10">Educación</h2>
+                        <div class="edu-list">
+                            <div class="edu-item">
+                                <div class="edu-icon" aria-hidden="true">
+                                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+                                </div>
+                                <div>
+                                    <p class="edu-title">Certificación Avanzada en UX/UI</p>
+                                    <p class="edu-place">ITBA Universidad</p>
+                                </div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-icon" aria-hidden="true">
+                                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+                                </div>
+                                <div>
+                                    <p class="edu-title">Certificación en Design Thinking</p>
+                                    <p class="edu-place">EAFIT</p>
+                                </div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-icon" aria-hidden="true">
+                                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+                                </div>
+                                <div>
+                                    <p class="edu-title">Carrera en Diseño Gráfico</p>
+                                    <p class="edu-place">UPB — Universidad Pontificia Bolivariana</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="edu-col">
+                        <span class="section-label">Habilidades</span>
+                        <h2 class="section-title mt-2 mb-10">Stack técnico</h2>
+                        <div class="stack-grid">
+                            <div class="stack-group">
+                                <p class="stack-category">Diseño & UX</p>
+                                <div class="skills-grid">
+                                    <span class="skill-tag">Figma</span>
+                                    <span class="skill-tag">Adobe XD</span>
+                                    <span class="skill-tag">Storybook</span>
+                                    <span class="skill-tag">Hotjar</span>
+                                    <span class="skill-tag">Maze</span>
+                                    <span class="skill-tag">Atomic Design</span>
+                                    <span class="skill-tag">WCAG</span>
+                                </div>
+                            </div>
+                            <div class="stack-group">
+                                <p class="stack-category">Desarrollo frontend</p>
+                                <div class="skills-grid">
+                                    <span class="skill-tag">HTML5</span>
+                                    <span class="skill-tag">CSS3 / SASS</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">React JS</span>
+                                    <span class="skill-tag">Next JS</span>
+                                    <span class="skill-tag">Styled Components</span>
+                                    <span class="skill-tag">CSS Modules</span>
+                                </div>
+                            </div>
+                            <div class="stack-group">
+                                <p class="stack-category">Metodologías & herramientas</p>
+                                <div class="skills-grid">
+                                    <span class="skill-tag">Design Tokens</span>
+                                    <span class="skill-tag">BEM</span>
+                                    <span class="skill-tag">Git / GitHub</span>
+                                    <span class="skill-tag">Jira</span>
+                                    <span class="skill-tag">Notion</span>
+                                    <span class="skill-tag">Google Analytics</span>
+                                    <span class="skill-tag">Jest</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </article>
+            </div>
         </section>
 
-        <footer class="py-3 text-center bg-gray-900 ">
-            <h3 class="font-regular text-gray-300">Design <a class="hover:underline" target="_blank"
-                    href="https://www.linkedin.com/in/rozdiego/">Diego Rozo</a> </h3>
+        <!-- ===== CONTACTO ===== -->
+        <section id="contacto" class="section py-24 bg-gray-900">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-label-light">Contacto</span>
+                        <h2 class="section-title text-white mt-2 mb-4">Hablemos</h2>
+                        <p class="text-gray-400 font-light mb-10">
+                            ¿Tienes un proyecto en mente? Me encantaría escucharte.
+                        </p>
+
+                        <div class="contact-info-list">
+                            <a href="mailto:rozdiego@gmail.com" class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact-info-label">Email</p>
+                                    <p class="contact-info-value">rozdiego@gmail.com</p>
+                                </div>
+                            </a>
+
+                            <a href="tel:+573002135654" class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact-info-label">Teléfono</p>
+                                    <p class="contact-info-value">+57 300 213 5654</p>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/rozdiego/" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact-info-label">LinkedIn</p>
+                                    <p class="contact-info-value">@rozdiego</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <!-- Honeypot anti-spam (invisible para usuarios) -->
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name" />
+                                <span class="field-error" id="error-nombre"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo electrónico</label>
+                                <input type="email" id="correo" name="correo" placeholder="tu@correo.com" autocomplete="email" />
+                                <span class="field-error" id="error-correo"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                            <span class="field-error" id="error-mensaje"></span>
+                        </div>
+
+                        <button type="submit" id="btn-submit" class="btn-submit">
+                            <span class="btn-label">
+                                Enviar mensaje
+                                <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </span>
+                            <span class="btn-loading" hidden>
+                                <svg class="spinner w-5 h-5 mr-2 inline" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"/>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+                                </svg>
+                                Enviando...
+                            </span>
+                        </button>
+
+                        <div id="form-success" class="form-feedback form-feedback--success" hidden>
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            ¡Mensaje enviado! Te respondo pronto.
+                        </div>
+                        <div id="form-error" class="form-feedback form-feedback--error" hidden>
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Algo salió mal. Escríbeme a  <a href="mailto:rozdiego@gmail.com" class="underline">rozdiego@gmail.com</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-6 bg-gray-950 text-center">
+            <p class="text-gray-500 text-sm">
+                © 2026
+                <a href="https://www.linkedin.com/in/rozdiego/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Diego Rozo</a>
+                — UX/UI Designer · Medellín, Colombia
+            </p>
         </footer>
+
     </main>
 
     <script src="js/main.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 
-
-    <!-- Contact Form JavaScript 
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js?v=6"></script>-->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-30646137-5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-
-        gtag("config", "UA-30646137-5");
-    </script>-->
 </body>
 
 </html>

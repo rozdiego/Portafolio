@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /backupPortfolio.zip
+Disallow: /google778975c92eadc8d6.html
+
+Sitemap: https://www.rozdiego.com/sitemap.xml

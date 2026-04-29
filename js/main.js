@@ -1,68 +1,151 @@
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav li a");
+/* ── Scroll reveal ── */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1, rootMargin: '0px 0px -48px 0px' }
+);
 
-const resetLinks = () => {
-  navLinks.forEach((link) => link.classList.remove("active"));
-};
+document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
-const handleScroll = () => {
-  const { pageYOffset } = window;
+/* ── Navegación activa por scroll ── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
-  sections.forEach((section) => {
-    const { id, offsetTop, clientHeight } = section;
-    const offset = offsetTop - 1;
-
-    if (pageYOffset >= offset && pageYOffset < offset + clientHeight) {
-      resetLinks();
+const updateActiveNav = () => {
+  const scrollY = window.pageYOffset;
+  sections.forEach(({ id, offsetTop, clientHeight }) => {
+    if (scrollY >= offsetTop - 100 && scrollY < offsetTop + clientHeight - 100) {
       navLinks.forEach((link) => {
-        if (link.dataset.scroll === id) {
-          link.classList.add("active");
-        }
+        link.classList.toggle('active', link.dataset.scroll === id);
       });
     }
   });
 };
 
-document.addEventListener("scroll", handleScroll);
+navLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.getElementById(link.dataset.scroll);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 
+document.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
 
-var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+/* ── Formulario de contacto ── */
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/rozdiego@gmail.com';
 
-// Change the icons inside the button based on previous settings
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    themeToggleLightIcon.classList.remove('hidden');
-} else {
-    themeToggleDarkIcon.classList.remove('hidden');
+const form      = document.getElementById('contact-form');
+const btnSubmit = document.getElementById('btn-submit');
+const btnLabel  = btnSubmit.querySelector('.btn-label');
+const btnLoading= btnSubmit.querySelector('.btn-loading');
+const msgSuccess= document.getElementById('form-success');
+const msgError  = document.getElementById('form-error');
+
+const fields = {
+  nombre:  document.getElementById('nombre'),
+  correo:  document.getElementById('correo'),
+  mensaje: document.getElementById('mensaje'),
+};
+
+const errors = {
+  nombre:  document.getElementById('error-nombre'),
+  correo:  document.getElementById('error-correo'),
+  mensaje: document.getElementById('error-mensaje'),
+};
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate() {
+  let valid = true;
+
+  if (!fields.nombre.value.trim()) {
+    showError('nombre', 'El nombre es obligatorio.');
+    valid = false;
+  } else {
+    clearError('nombre');
+  }
+
+  if (!fields.correo.value.trim()) {
+    showError('correo', 'El correo es obligatorio.');
+    valid = false;
+  } else if (!EMAIL_RE.test(fields.correo.value.trim())) {
+    showError('correo', 'Ingresa un correo válido.');
+    valid = false;
+  } else {
+    clearError('correo');
+  }
+
+  if (!fields.mensaje.value.trim()) {
+    showError('mensaje', 'El mensaje no puede estar vacío.');
+    valid = false;
+  } else {
+    clearError('mensaje');
+  }
+
+  return valid;
 }
 
-var themeToggleBtn = document.getElementById('theme-toggle');
+function showError(field, msg) {
+  errors[field].textContent = msg;
+  fields[field].classList.add('input-error');
+}
 
-themeToggleBtn.addEventListener('click', function() {
+function clearError(field) {
+  errors[field].textContent = '';
+  fields[field].classList.remove('input-error');
+}
 
-    // toggle icons inside button
-    themeToggleDarkIcon.classList.toggle('hidden');
-    themeToggleLightIcon.classList.toggle('hidden');
+function setLoading(loading) {
+  btnSubmit.disabled = loading;
+  btnLabel.hidden    = loading;
+  btnLoading.hidden  = !loading;
+}
 
-    // if set via local storage previously
-    if (localStorage.getItem('color-theme')) {
-        if (localStorage.getItem('color-theme') === 'light') {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-        }
+Object.values(fields).forEach((input) => {
+  input.addEventListener('input', () => {
+    const key = input.id;
+    if (errors[key]) clearError(key);
+  });
+});
 
-    // if NOT set via local storage previously
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  msgSuccess.hidden = true;
+  msgError.hidden   = true;
+
+  if (!validate()) return;
+
+  setLoading(true);
+
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        nombre:  fields.nombre.value.trim(),
+        correo:  fields.correo.value.trim(),
+        mensaje: fields.mensaje.value.trim(),
+      }),
+    });
+
+    if (res.ok) {
+      form.reset();
+      msgSuccess.hidden = false;
+      msgSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     } else {
-        if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-        } else {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-        }
+      msgError.hidden = false;
     }
-    
+  } catch {
+    msgError.hidden = false;
+  } finally {
+    setLoading(false);
+  }
 });
