@@ -1,0 +1,11 @@
+{
+  "name": "portafolio",
+  "private": true,
+  "devDependencies": {
+    "cf": "^1.0.0-rc.2",
+    "wrangler": "^4.166.0"
+  },
+  "scripts": {
+    "deploy": "cf deploy"
+  }
+}

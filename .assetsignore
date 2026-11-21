@@ -1,0 +1,16 @@
+.git
+.gitignore
+._*
+.DS_Store
+CNAME
+README.md
+backupPortfolio.zip
+wrangler.jsonc
+.assetsignore
+.assetsignore
+node_modules
+package.json
+package-lock.json
+cloudflare.config.ts
+wrangler.config.ts
+.wrangler

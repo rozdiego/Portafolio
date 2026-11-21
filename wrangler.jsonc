@@ -1,0 +1,11 @@
+{
+  "name": "portafolio",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "rozdiego.com", "custom_domain": true },
+    { "pattern": "www.rozdiego.com", "custom_domain": true }
+  ],
+  "assets": { "directory": "." }
+}
