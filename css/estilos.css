@@ -1109,3 +1109,36 @@ section.bg-gray-50 {
 section.bg-gray-900,
 footer.bg-gray-950 { background: #000000 !important; }
 section.bg-gray-900 { border-top: 1px solid #2e2e2e; }
+
+/* ===== Una empresa, varios cargos ===== */
+.timeline-roles { margin-top: 18px; }
+.timeline-role {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 28px;
+  border-left: 2px solid #2e2e2e;
+}
+.timeline-role:last-child { margin-bottom: 0; }
+.timeline-role::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e4f021;
+}
+.timeline-role:last-child::before { background: #6b7280; }
+.timeline-role-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f5f5f5;
+  margin-bottom: 2px;
+}
+.timeline-role-date {
+  display: block;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
