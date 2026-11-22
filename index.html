@@ -7,12 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- ===== SEO PRIMARIO ===== -->
-    <title>Diego Rozo | UX/UI Designer en Medellín, Colombia — +8 años de experiencia</title>
-    <meta name="description" content="Soy Diego Rozo, UX/UI Designer con más de 7 años de experiencia en Medellín, Colombia. Actualmente en Linex Travel. He diseñado para Telefónica, EMI y BUPA. Contáctame y transformemos tu producto digital." />
+    <title>Diego Rozo | UX/UI Designer en Medellín, Colombia</title>
+    <meta name="description" content="Diego Rozo, UX/UI Designer en Medellín con más de 8 años de experiencia. Sistemas de diseño y productos digitales para Telefónica, EMI y BUPA. Hablemos." />
     <meta name="keywords" content="UX designer Medellín, UI designer Colombia, diseñador UX Colombia, consultor UX Medellín, diseño de experiencia de usuario, diseño de interfaces, Diego Rozo, UX/UI designer freelance Colombia" />
     <meta name="author" content="Diego Rozo" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#000000" />
     <link rel="canonical" href="https://www.rozdiego.com/" />
+    <link rel="alternate" hreflang="es-CO" href="https://www.rozdiego.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.rozdiego.com/" />
 
     <!-- ===== OPEN GRAPH (LinkedIn, Facebook, WhatsApp) ===== -->
     <meta property="og:type" content="website" />
@@ -20,8 +23,9 @@
     <meta property="og:url" content="https://www.rozdiego.com/" />
     <meta property="og:site_name" content="Diego Rozo — UX/UI Designer" />
     <meta property="og:title" content="Diego Rozo | UX/UI Designer en Medellín, Colombia" />
-    <meta property="og:description" content="Consultor UX con +8 años de experiencia diseñando productos digitales para Telefónica, EMI y BUPA. Transformo necesidades de usuarios en interfaces funcionales y atractivas." />
-    <meta property="og:image" content="https://www.rozdiego.com/images/diego.jpg" />
+    <meta property="og:description" content="UX/UI Designer con más de 8 años de experiencia. Sistemas de diseño y productos digitales para Telefónica, EMI y BUPA." />
+    <meta property="og:image" content="https://www.rozdiego.com/images/og-diego.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Diego Rozo, UX/UI Designer en Medellín Colombia" />
@@ -29,8 +33,9 @@
     <!-- ===== TWITTER / X CARD ===== -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Diego Rozo | UX/UI Designer en Medellín, Colombia" />
-    <meta name="twitter:description" content="Consultor UX con +8 años de experiencia diseñando productos digitales para Telefónica, EMI y BUPA." />
-    <meta name="twitter:image" content="https://www.rozdiego.com/images/diego.jpg" />
+    <meta name="twitter:description" content="UX/UI Designer con más de 8 años de experiencia. Sistemas de diseño y productos digitales para Telefónica, EMI y BUPA." />
+    <meta name="twitter:image" content="https://www.rozdiego.com/images/og-diego.jpg" />
+    <meta name="twitter:image:alt" content="Diego Rozo, UX/UI Designer en Medellín, Colombia" />
 
     <!-- ===== FAVICON ===== -->
     <link rel="icon" href="favicon.png" type="image/png" />
@@ -41,20 +46,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
-    <!-- ===== TAILWIND ===== -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            corePlugins: { preflight: false },
-            theme: {
-                extend: {
-                    colors: { accent: '#e4f021', gray: { 50: '#1a1a1a', 700: '#d4d4d4', 900: '#000000', 950: '#000000' } },
-                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
-
+    <!-- ===== ESTILOS (Tailwind compilado: npm run build:css) ===== -->
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/estilos.css" />
 
     <!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
@@ -80,6 +73,8 @@
           "image": {
             "@type": "ImageObject",
             "url": "https://www.rozdiego.com/images/diego.jpg",
+            "width": 400,
+            "height": 400,
             "caption": "Diego Rozo, UX/UI Designer en Medellín, Colombia"
           },
           "jobTitle": "UX/UI Designer",
@@ -94,17 +89,34 @@
             "addressRegion": "Antioquia",
             "addressCountry": "CO"
           },
-          "email": "mailto:rozdiego@gmail.com",
+          "email": "rozdiego@gmail.com",
           "telephone": "+573002135654",
           "sameAs": [
             "https://www.linkedin.com/in/rozdiego/",
             "https://www.behance.net/rozdiego"
+          ],
+          "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Universidad Pontificia Bolivariana (UPB)" },
+            { "@type": "CollegeOrUniversity", "name": "Universidad EAFIT" },
+            { "@type": "CollegeOrUniversity", "name": "ITBA" }
           ],
           "knowsAbout": [
             "UX Design", "UI Design", "Design Thinking", "User Research",
             "Figma", "Adobe XD", "Prototyping", "Design Systems", "Usability Testing",
             "Information Architecture", "Wireframing", "Interaction Design"
           ]
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://www.rozdiego.com/#profilepage",
+          "url": "https://www.rozdiego.com/",
+          "name": "Diego Rozo | UX/UI Designer en Medellín, Colombia",
+          "inLanguage": "es-CO",
+          "isPartOf": { "@id": "https://www.rozdiego.com/#website" },
+          "about": { "@id": "https://www.rozdiego.com/#person" },
+          "mainEntity": { "@id": "https://www.rozdiego.com/#person" },
+          "primaryImageOfPage": { "@type": "ImageObject", "url": "https://www.rozdiego.com/images/og-diego.jpg", "width": 1200, "height": 630 },
+          "dateModified": "2026-11-22"
         }
       ]
     }

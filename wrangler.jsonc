@@ -7,5 +7,5 @@
     { "pattern": "rozdiego.com", "custom_domain": true },
     { "pattern": "www.rozdiego.com", "custom_domain": true }
   ],
-  "assets": { "directory": "." }
+  "assets": { "directory": ".", "not_found_handling": "404-page" }
 }

@@ -15,3 +15,5 @@ cloudflare.config.ts
 wrangler.config.ts
 .wrangler
 backupPortfolio.zip
+src
+tailwind.config.js
