@@ -7,7 +7,10 @@
  *   1. Valida origen y datos
  *   2. Verifica Turnstile
  *   3. Limita envíos por IP (KV)
- *   4. Guarda copia en KV y envía correo con Email Routing (send_email)
+ *   4. Guarda el mensaje en D1 y envía correo con Email Routing (send_email)
+ *
+ * KV solo se usa para el límite de envíos por IP. Una tarea diaria (cron,
+ * ver scheduled) borra los mensajes con más de 12 meses.
  */
 import { EmailMessage } from 'cloudflare:email';
 
@@ -20,7 +23,7 @@ const ALLOWED_ORIGINS = new Set([
 const LIMITS = { nombre: 100, correo: 200, mensaje: 5000 };
 const MAX_BODY_BYTES = 20 * 1024;
 const RATE_LIMIT_PER_HOUR = 5;
-const RETENTION_SECONDS = 365 * 24 * 60 * 60; // los mensajes se borran solos a los 12 meses
+const RETENTION_MONTHS = 12; // plazo de conservación de los mensajes (política de privacidad)
 const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
 
 export default {
@@ -101,24 +104,61 @@ export default {
       pais: request.cf?.country || null,
       userAgent: (request.headers.get('User-Agent') || '').slice(0, 300),
     };
-    const id = `msg:${now.toISOString()}:${crypto.randomUUID().slice(0, 8)}`;
+    const id = crypto.randomUUID();
 
     // Guardamos copia y enviamos el correo; basta con que uno de los dos funcione
     const [stored, mailed] = await Promise.allSettled([
-      env.CONTACTS.put(id, JSON.stringify(record), { expirationTtl: RETENTION_SECONDS }),
+      saveMessage(id, record, env),
       sendMail(record, env),
     ]);
-    if (stored.status === 'rejected') console.error('KV put falló:', stored.reason);
+    if (stored.status === 'rejected') console.error('Guardado en D1 falló:', stored.reason);
     if (mailed.status === 'rejected') console.error('Envío de correo falló:', mailed.reason);
 
     if (stored.status === 'rejected' && mailed.status === 'rejected') {
       return json({ ok: false, error: 'delivery_failed' }, 502);
     }
+    // Aprovechamos cada envío para borrar los mensajes que ya superaron la retención
+    ctx.waitUntil(purgeExpired(env));
     return json({ ok: true });
+  },
+
+  // Tarea diaria (cron). Solo se ejecuta si se activa "triggers.crons" en wrangler.jsonc,
+  // lo que requiere un subdominio workers.dev registrado en la cuenta.
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(purgeExpired(env));
   },
 };
 
 /* ───────── utilidades ───────── */
+
+async function purgeExpired(env) {
+  try {
+    const res = await env.DB
+      .prepare('DELETE FROM contactos WHERE fecha < ?')
+      .bind(monthsAgoISO(RETENTION_MONTHS))
+      .run();
+    const n = res.meta?.changes ?? 0;
+    if (n) console.log(`Retención: ${n} mensajes eliminados`);
+  } catch (err) {
+    console.error('Retención falló:', err);
+  }
+}
+
+function monthsAgoISO(months) {
+  const d = new Date();
+  d.setUTCMonth(d.getUTCMonth() - months);
+  return d.toISOString();
+}
+
+async function saveMessage(id, r, env) {
+  await env.DB
+    .prepare(
+      `INSERT INTO contactos (id, nombre, correo, mensaje, fecha, pais, ip, user_agent, consentimiento)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)`
+    )
+    .bind(id, r.nombre, r.correo, r.mensaje, r.fecha, r.pais, r.ip, r.userAgent)
+    .run();
+}
 
 function json(body, status = 200, extra = {}) {
   return new Response(JSON.stringify(body), {

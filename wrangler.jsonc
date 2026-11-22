@@ -16,6 +16,9 @@
   "kv_namespaces": [
     { "binding": "CONTACTS", "id": "f0a513179c5e49c496bad4b5a9a52834" }
   ],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "portafolio-contactos", "database_id": "4358be67-8518-42e4-bf2c-cef4aee8f0a2", "migrations_dir": "migrations" }
+  ],
   "send_email": [
     { "name": "EMAIL", "destination_address": "rozdiego@gmail.com" }
   ],
@@ -38,6 +41,9 @@
       },
       "kv_namespaces": [
         { "binding": "CONTACTS", "id": "f0a513179c5e49c496bad4b5a9a52834" }
+      ],
+      "d1_databases": [
+        { "binding": "DB", "database_name": "portafolio-contactos", "database_id": "4358be67-8518-42e4-bf2c-cef4aee8f0a2", "migrations_dir": "migrations" }
       ],
       "send_email": [
         { "name": "EMAIL", "destination_address": "rozdiego@gmail.com" }
