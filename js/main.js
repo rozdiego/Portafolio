@@ -19,12 +19,18 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 const updateActiveNav = () => {
   const scrollY = window.pageYOffset;
-  sections.forEach(({ id, offsetTop, clientHeight }) => {
-    if (scrollY >= offsetTop - 100 && scrollY < offsetTop + clientHeight - 100) {
-      navLinks.forEach((link) => {
-        link.classList.toggle('active', link.dataset.scroll === id);
-      });
-    }
+  const atBottom = window.innerHeight + scrollY >= document.documentElement.scrollHeight - 2;
+
+  // Activa la última sección cuyo inicio ya pasó; al llegar al final de la
+  // página (donde ya no se puede hacer más scroll) queda activa la última.
+  let current = sections[0];
+  sections.forEach((section) => {
+    if (scrollY >= section.offsetTop - 100) current = section;
+  });
+  if (atBottom) current = sections[sections.length - 1];
+
+  navLinks.forEach((link) => {
+    link.classList.toggle('active', link.dataset.scroll === current.id);
   });
 };
 
