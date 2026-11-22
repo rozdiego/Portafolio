@@ -20,6 +20,7 @@ const ALLOWED_ORIGINS = new Set([
 const LIMITS = { nombre: 100, correo: 200, mensaje: 5000 };
 const MAX_BODY_BYTES = 20 * 1024;
 const RATE_LIMIT_PER_HOUR = 5;
+const RETENTION_SECONDS = 365 * 24 * 60 * 60; // los mensajes se borran solos a los 12 meses
 const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
 
 export default {
@@ -66,6 +67,7 @@ export default {
     else if (nombre.length > LIMITS.nombre) fieldErrors.nombre = 'El nombre es demasiado largo.';
     if (!correo) fieldErrors.correo = 'El correo es obligatorio.';
     else if (correo.length > LIMITS.correo || !EMAIL_RE.test(correo)) fieldErrors.correo = 'Ingresa un correo válido.';
+    if (data.consentimiento !== true) fieldErrors.consentimiento = 'Debes aceptar la política de tratamiento de datos.';
     if (!mensaje) fieldErrors.mensaje = 'El mensaje no puede estar vacío.';
     else if (mensaje.length > LIMITS.mensaje) fieldErrors.mensaje = 'El mensaje es demasiado largo.';
     if (Object.keys(fieldErrors).length) {
@@ -94,6 +96,7 @@ export default {
       correo,
       mensaje,
       fecha: now.toISOString(),
+      consentimiento: true,
       ip,
       pais: request.cf?.country || null,
       userAgent: (request.headers.get('User-Agent') || '').slice(0, 300),
@@ -102,7 +105,7 @@ export default {
 
     // Guardamos copia y enviamos el correo; basta con que uno de los dos funcione
     const [stored, mailed] = await Promise.allSettled([
-      env.CONTACTS.put(id, JSON.stringify(record)),
+      env.CONTACTS.put(id, JSON.stringify(record), { expirationTtl: RETENTION_SECONDS }),
       sendMail(record, env),
     ]);
     if (stored.status === 'rejected') console.error('KV put falló:', stored.reason);

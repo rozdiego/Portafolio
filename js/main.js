@@ -55,12 +55,14 @@ const fields = {
   nombre:  document.getElementById('nombre'),
   correo:  document.getElementById('correo'),
   mensaje: document.getElementById('mensaje'),
+  consentimiento: document.getElementById('consentimiento'),
 };
 
 const errors = {
   nombre:  document.getElementById('error-nombre'),
   correo:  document.getElementById('error-correo'),
   mensaje: document.getElementById('error-mensaje'),
+  consentimiento: document.getElementById('error-consentimiento'),
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -92,6 +94,13 @@ function validate() {
     clearError('mensaje');
   }
 
+  if (!fields.consentimiento.checked) {
+    showError('consentimiento', 'Debes aceptar la política de tratamiento de datos.');
+    valid = false;
+  } else {
+    clearError('consentimiento');
+  }
+
   return valid;
 }
 
@@ -116,6 +125,7 @@ Object.values(fields).forEach((input) => {
     const key = input.id;
     if (errors[key]) clearError(key);
   });
+  input.addEventListener('change', () => { if (errors[input.id]) clearError(input.id); });
 });
 
 form.addEventListener('submit', async (e) => {
@@ -135,6 +145,7 @@ form.addEventListener('submit', async (e) => {
         nombre:  fields.nombre.value.trim(),
         correo:  fields.correo.value.trim(),
         mensaje: fields.mensaje.value.trim(),
+        consentimiento: fields.consentimiento.checked,
         turnstile: (form.querySelector('[name="cf-turnstile-response"]') || {}).value || '',
         _honey: (form.querySelector('[name="_honey"]') || {}).value || '',
       }),

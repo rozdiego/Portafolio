@@ -1145,3 +1145,9 @@ section.bg-gray-900 { border-top: 1px solid #2e2e2e; }
 
 /* El atributo hidden debe ganar a cualquier display definido en clases */
 [hidden] { display: none !important; }
+
+/* Casilla de consentimiento del formulario */
+.consent-label { display: flex; gap: 10px; align-items: flex-start; font-size: 0.82rem; line-height: 1.5; color: #9ca3af; cursor: pointer; }
+.consent-label input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: #e4f021; }
+.consent-label a { color: #e4f021; text-decoration: underline; }
+.form-consent { margin-top: 4px; }
