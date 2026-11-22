@@ -29,6 +29,7 @@ const updateActiveNav = () => {
 };
 
 navLinks.forEach((link) => {
+  if (!link.dataset.scroll) return; // enlaces a otras páginas (p. ej. Blog)
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const target = document.getElementById(link.dataset.scroll);

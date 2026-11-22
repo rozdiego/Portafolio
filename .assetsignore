@@ -19,3 +19,4 @@ src
 tailwind.config.js
 cv-src
 migrations
+blog/*.md

@@ -16,3 +16,6 @@
 
 node_modules
 ._*
+
+# Borradores del blog (no se publican; pueden traer notas privadas)
+blog/*.md
