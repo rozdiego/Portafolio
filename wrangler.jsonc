@@ -1,5 +1,6 @@
 {
   "name": "portafolio",
+  "main": "src/worker.js",
   "compatibility_date": "2026-11-01",
   "workers_dev": false,
   "preview_urls": false,
@@ -7,5 +8,44 @@
     { "pattern": "rozdiego.com", "custom_domain": true },
     { "pattern": "www.rozdiego.com", "custom_domain": true }
   ],
-  "assets": { "directory": ".", "not_found_handling": "404-page" }
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "kv_namespaces": [
+    { "binding": "CONTACTS", "id": "f0a513179c5e49c496bad4b5a9a52834" }
+  ],
+  "send_email": [
+    { "name": "EMAIL", "destination_address": "rozdiego@gmail.com" }
+  ],
+  "vars": {
+    "CONTACT_FROM": "contacto@rozdiego.com",
+    "CONTACT_TO": "rozdiego@gmail.com"
+  },
+
+  // Copia de pruebas en staging.rozdiego.com (se puede borrar cuando ya no haga falta)
+  "env": {
+    "staging": {
+      "name": "portafolio-staging",
+      "workers_dev": false,
+      "preview_urls": false,
+      "routes": [{ "pattern": "staging.rozdiego.com", "custom_domain": true }],
+      "assets": {
+        "directory": ".",
+        "not_found_handling": "404-page",
+        "run_worker_first": ["/api/*"]
+      },
+      "kv_namespaces": [
+        { "binding": "CONTACTS", "id": "f0a513179c5e49c496bad4b5a9a52834" }
+      ],
+      "send_email": [
+        { "name": "EMAIL", "destination_address": "rozdiego@gmail.com" }
+      ],
+      "vars": {
+        "CONTACT_FROM": "contacto@rozdiego.com",
+        "CONTACT_TO": "rozdiego@gmail.com"
+      }
+    }
+  }
 }

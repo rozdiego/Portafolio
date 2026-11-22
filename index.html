@@ -698,6 +698,9 @@
                             <span class="field-error" id="error-mensaje"></span>
                         </div>
 
+                        <!-- Turnstile (captcha de Cloudflare): solo se muestra si hace falta verificar -->
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAAGMnzIvP9THtcvOt" data-theme="dark" data-language="es" data-appearance="interaction-only"></div>
+
                         <button type="submit" id="btn-submit" class="btn-submit">
                             <span class="btn-label">
                                 Enviar mensaje
@@ -724,7 +727,7 @@
                             <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
-                            Algo salió mal. Escríbeme a  <a href="mailto:rozdiego@gmail.com" class="underline">rozdiego@gmail.com</a>
+                            <span id="form-error-text">Algo salió mal. Escríbeme a</span>&nbsp;<a href="mailto:rozdiego@gmail.com" class="underline">rozdiego@gmail.com</a>
                         </div>
                     </form>
                 </div>
@@ -740,6 +743,8 @@
         </footer>
 
     </main>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <script src="js/main.js"></script>
 

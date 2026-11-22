@@ -1142,3 +1142,6 @@ section.bg-gray-900 { border-top: 1px solid #2e2e2e; }
   color: #9ca3af;
   margin-bottom: 12px;
 }
+
+/* El atributo hidden debe ganar a cualquier display definido en clases */
+[hidden] { display: none !important; }

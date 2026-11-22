@@ -40,7 +40,8 @@ document.addEventListener('scroll', updateActiveNav, { passive: true });
 updateActiveNav();
 
 /* ── Formulario de contacto ── */
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/rozdiego@gmail.com';
+const FORM_ENDPOINT = '/api/contact';
+const DEFAULT_ERROR = 'Algo salió mal. Escríbeme a';
 
 const form      = document.getElementById('contact-form');
 const btnSubmit = document.getElementById('btn-submit');
@@ -48,6 +49,7 @@ const btnLabel  = btnSubmit.querySelector('.btn-label');
 const btnLoading= btnSubmit.querySelector('.btn-loading');
 const msgSuccess= document.getElementById('form-success');
 const msgError  = document.getElementById('form-error');
+const msgErrorText = document.getElementById('form-error-text');
 
 const fields = {
   nombre:  document.getElementById('nombre'),
@@ -133,17 +135,32 @@ form.addEventListener('submit', async (e) => {
         nombre:  fields.nombre.value.trim(),
         correo:  fields.correo.value.trim(),
         mensaje: fields.mensaje.value.trim(),
+        turnstile: (form.querySelector('[name="cf-turnstile-response"]') || {}).value || '',
+        _honey: (form.querySelector('[name="_honey"]') || {}).value || '',
       }),
     });
 
-    if (res.ok) {
+    let data = {};
+    try { data = await res.json(); } catch { /* respuesta sin JSON */ }
+
+    if (res.ok && data.ok) {
       form.reset();
+      if (window.turnstile) window.turnstile.reset();
       msgSuccess.hidden = false;
       msgSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     } else {
-      msgError.hidden = false;
+      if (data.fields) {
+        Object.entries(data.fields).forEach(([k, m]) => { if (errors[k]) showError(k, m); });
+      }
+      if (window.turnstile) window.turnstile.reset();
+      msgErrorText.textContent =
+        data.error === 'captcha'      ? 'No pudimos verificar que eres una persona. Inténtalo de nuevo o escríbeme a' :
+        data.error === 'rate_limited' ? 'Has enviado varios mensajes seguidos. Inténtalo más tarde o escríbeme a' :
+        DEFAULT_ERROR;
+      if (data.error !== 'validation') msgError.hidden = false;
     }
   } catch {
+    msgErrorText.textContent = DEFAULT_ERROR;
     msgError.hidden = false;
   } finally {
     setLoading(false);
