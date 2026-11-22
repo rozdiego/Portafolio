@@ -82,3 +82,6 @@
 @media (max-width: 560px) {
   .caso-figs { grid-template-columns: 1fr 1fr; gap: 12px; }
 }
+
+.caso-portada { margin: 0 0 36px; }
+.caso-portada img { max-height: 520px; object-fit: cover; }
