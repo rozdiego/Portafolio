@@ -1151,3 +1151,13 @@ section.bg-gray-900 { border-top: 1px solid #2e2e2e; }
 .consent-label input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: #e4f021; }
 .consent-label a { color: #e4f021; text-decoration: underline; }
 .form-consent { margin-top: 4px; }
+
+/* Portafolio con 4 proyectos: tarjeta destacada + 3 secundarias */
+@media (min-width: 1025px) {
+  .projects-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project-card--tablet-wide { grid-column: 1 / -1; flex-direction: row; }
+  .project-card--tablet-wide .project-card-image { width: 45%; flex-shrink: 0; aspect-ratio: auto; min-height: 220px; }
+  .project-card--tablet-wide .project-card-body { justify-content: center; }
+}
