@@ -17,7 +17,6 @@ import { EmailMessage } from 'cloudflare:email';
 const ALLOWED_ORIGINS = new Set([
   'https://www.rozdiego.com',
   'https://rozdiego.com',
-  'https://staging.rozdiego.com',
 ]);
 
 const LIMITS = { nombre: 100, correo: 200, mensaje: 5000 };

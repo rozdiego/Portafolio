@@ -25,33 +25,5 @@
   "vars": {
     "CONTACT_FROM": "contacto@rozdiego.com",
     "CONTACT_TO": "rozdiego@gmail.com"
-  },
-
-  // Copia de pruebas en staging.rozdiego.com (se puede borrar cuando ya no haga falta)
-  "env": {
-    "staging": {
-      "name": "portafolio-staging",
-      "workers_dev": false,
-      "preview_urls": false,
-      "routes": [{ "pattern": "staging.rozdiego.com", "custom_domain": true }],
-      "assets": {
-        "directory": ".",
-        "not_found_handling": "404-page",
-        "run_worker_first": ["/api/*"]
-      },
-      "kv_namespaces": [
-        { "binding": "CONTACTS", "id": "f0a513179c5e49c496bad4b5a9a52834" }
-      ],
-      "d1_databases": [
-        { "binding": "DB", "database_name": "portafolio-contactos", "database_id": "4358be67-8518-42e4-bf2c-cef4aee8f0a2", "migrations_dir": "migrations" }
-      ],
-      "send_email": [
-        { "name": "EMAIL", "destination_address": "rozdiego@gmail.com" }
-      ],
-      "vars": {
-        "CONTACT_FROM": "contacto@rozdiego.com",
-        "CONTACT_TO": "rozdiego@gmail.com"
-      }
-    }
   }
 }
